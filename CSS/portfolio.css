@@ -1,0 +1,232 @@
+/*start of General Styling*/
+/*body styling*/
+body{
+    margin: 0%;
+}
+/*h1*/
+h1{
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 3%;
+    color: rgb(16, 16, 16);
+}
+/*hover effect over all h1 elements*/
+h1:hover{
+    filter: blur(100%);
+    transform: scale(1.1);
+    transition: transform 1s;    
+}
+.white-text{
+    color: #fff;
+}
+/*p element */
+p{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    letter-spacing: 2px;
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/*adding hover effect to p*/
+p:hover{
+    transition: transform .5s;
+    transform: scale(1.02);
+}
+/*center element and effect*/
+center{
+    text-align: center;
+}
+center:hover{
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+/* a element*/
+a{
+    color: blue;
+}
+/* q element*/
+q{
+    font-style: italic;
+}
+/*img section*/
+img{
+    filter: grayscale(5%);
+    border-radius: 8px;
+    max-width: 100%;
+    height: 340px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*img effect*/
+img:hover{
+    filter: grayscale(75%);
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+/* @media section*/
+@media screen and (max-width: 576px){
+    img{
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+/* footer section*/
+footer{
+    padding: 2%;
+    background-color: white;
+}
+/*end of General Styling*/
+/*start of navbar styling*/
+.navbar{
+    overflow: hidden;
+    background-color: red;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-animation: moveNav 5s;
+    animation: 5s;
+}
+@keyframes moveNav{
+    from{right: -100vw;}
+    to{right: 0vw;}
+}
+/* navbar links*/
+.navbar a{
+    float: left;
+    display: block;
+    color: aliceblue;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    -webkit-animation: moveNavText 5s;
+    animation: moveNavText 5s;
+}
+/*navbar text move*/
+@keyframes moveNavText{
+    from{top: -100vw;}
+    to{top: 0vw;}
+}
+@media screen and(max-width:576px) {
+    .navbar a{
+        width: 25%;
+        font-size: medium;
+    }
+}
+/*navbar hover*/
+.navbar a:hover{
+    background-color: aliceblue;
+    color: black;
+    font-weight: bold;
+}
+.navbar a.action{/* This targets the a element on the navbar with the "active" class */
+    background-color: blue;
+}
+/*end of navbar styling*/
+/*start of video styling*/
+#Coding-video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+@media screen and(max-width: 576px) {
+    #coding-video{
+        display: none;
+    }
+}
+/*Text over video*/
+.Video_Text{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: aliceblue;
+    width: 100%;
+    padding: 125px;
+    position: relative;
+    -webkit-animation: moveVideoText 5s;
+    animation: moveVideoText 5s;
+}
+/*end of video styling*/
+/*start of table styling*/
+*{/*The asterisk is a universal selector that applies this effect to all elements on the page*/
+    box-sizing: border-box;
+}
+.column_1{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 400px;
+    background-color: lightskyblue;
+}
+@media screen and(max-width: 576px) {
+    .column_1{
+        overflow: auto;
+    }
+}
+.column_2{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 1.9%;
+    height: 400px;
+    background-color: rgb(0, 100, 0);
+}
+.column_tall{
+    padding-top: 3.5%;
+    height: 450px;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+/*end of table styling*/
+/*start of form styling*/
+input[type=text]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    resize: vertical;
+    font-family: 'Courier New', Courier, monospace;
+}
+input[type=text]:hover{
+    box-shadow: 0 0 5px #00004d inset;
+}
+/*SUBMIT button*/
+input[type=submit]{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: perpetua;
+}
+input[type=submit]:hover{
+    background-color: #fff;
+    color: black;
+    transform: scale(1.5);
+    transition: transform 1.5s;
+}
+form{
+    border-radius: 5px;
+    background-color: aliceblue;
+    padding: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+/*end of form styling*/
