@@ -26,14 +26,14 @@ function showSlides(n) {
     var dots = document.getElementsByClassName('dot');
     //If n (the number passed into the function) is greater than
     //the length of the array "slides", the slideIndex is set to 1
-    if (n > slides.length) {slideIndex = 1};
+    if (n > slide.length) {slideIndex = 1};
     //If n is less than 1, the slideIndex is set to the lenght of
     //the array "slides"
-    if (n < 1) {slideIndex = slides.length};
+    if (n < 1) {slideIndex = slide.length};
     //This for loop takes each item in the array "slides" and
     //sets the display to none
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = 'none';
+    for (i = 0; i < slide.length; i++) {
+        slide[i].style.display = 'none';
     }
     //This for loop takes each item in the array "dots" and
     //and removes "active" which removes the active styling
@@ -41,7 +41,7 @@ function showSlides(n) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     //This displays the image in the slideshow
-    slides[slideIndex - 1].style.display = "block";
+    slide[slideIndex - 1].style.display = "block";
     //This adds the active styling to the dot associated with the image
     dots[slideIndex - 1].className += " active";
 }
