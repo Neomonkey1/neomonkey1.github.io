@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<html>
 <!--start of head section-->
 <head lang="en">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width"/>
     <title>Raymond H. Portfolio</title>
+    <link rel="shortcut icon" type="img/jpg" href="./Images/coding_icon.png">
     <link rel="stylesheet" type="text/css" href="./CSS/portfolio.css">
 </head>
 <!--end of head section-->
@@ -12,9 +14,11 @@
     <!--navbar-->
     <div class="navbar">
         <a class="action" href="#Home">Home</a>
+        <a href="#Slideshow">Slideshow</a>
         <a href="#about">About</a>
-        <a href="#github">GitHub</a>
-        <a href="#contact">Contact</a>
+        <a href="#github">GitHub</a>        
+        <!--Onclick and ondblclick function added to open and close the contact form-->
+        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
     </div>
     <br>    
     <!--end navbar-->
@@ -30,20 +34,76 @@
     <div class="Video_Text">
         <h1 class="white-text">Raymond Harrison's Portfolio</h1>
         <p class="center"><!--write something here later-->
-            <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
-                <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
-                <br>field of battle and to command such unswervingly dutiful actors or troops.
-            </q>
-            <br> -Joseph Weizenbaum
-            <br>
-            <br> My name is Raymond. Welcome to my portfolio website. On it, I will tell you about my background and experience.
-            <br>
-            <br> Thank you for stopping by and enjoy!
-        
-
+            <strong>
+                <q>Failure is instructive. The person who really thinks learns quite as much from his failures as from his successes.                               
+                </q>
+                <br> -John Dewey
+                <br>
+                <q>
+                    Learning from failure is an essential element in any human endeavour.
+                    Mistakes should not be feared ... just learned from.
+                </q>
+                <br> -Roger Macdonald Andrew
+                <br>
+                <br> My name is Raymond. Welcome to my portfolio website. On it, I will tell you about my background and experience.
+                <br>
+                <br> Thank you for stopping by and enjoy!
+            </strong> 
         </p>
     </div>
     <!--end video text-->
+    <!--Start of Slideshow section-->
+    <div id="Slideshow">
+        <div id="Slideshow_Background">
+            <div id="Slideshow_Container">
+                <!--slide 1 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Images/self.png" alt="Picture of me">
+                    <div class="text">I'm looking to assist you and the company!</div>
+                </div>
+                <!--slide 2 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS and JS logos">
+                    <div class="text">I am a full-stack software developer,<br>trained in:<br>HTML, CSS, JavaScript,</div>
+                </div>
+                <!--slide 3 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Images/Python.png" alt="Python logo">
+                    <div class="text">the popular programming language Python,</div>
+                </div>
+                <!--slide 4 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Images/C_Sharp_and_Dot_NET.png" alt="C# logo">
+                    <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+                </div>
+                <!--slide 5 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Images/SQL_and_Database.jpg" alt="SQL logo">
+                    <div class="text">back end development, databases and SQL.</div>
+                </div>
+                <!--slide 6 of 6-->
+                <div class="mySlides fade">
+                    <img class="Slideshow_Images" src="./Images/email-me.png" alt="Email">
+                    <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
+                </div>
+                <!--Previous and next buttons-->
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br><!--adding space between slideshow and dots-->
+            <!--Slideshow dots-->
+            <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+
+    </div>
+    <!--end of Slideshow section-->
     <!--start of about section-->
     <div class="row" id="about">
         <div class="column_1"><!--left column-->
@@ -52,7 +112,7 @@
             <br>
             <br>Trained at <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>'s Software Developer Boot Camp, I have experience in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more.
             <br>
-            <br>I am a full-stack developer and would love to work with you on your projects. <a href="contact">Contact</a> me below!
+            <br>I am a full-stack developer and would love to work with you on your projects.
             </p>
         </div>
         <div class="column_2"><!--right column-->
@@ -76,33 +136,40 @@
         </div>
     </div>
     <!--end of GitHub section-->
-    <!--start of contact section-->
-    <div class="row" id="contact">
-        <div class="column_1 column_tall"><!--left column-->
-            <h1>Contact</h1>
-            <form action="https://formspree.io/f/mpzvaawd" method="post">
-                <label>Name:</label>
-                    <input type="text" placeholder="Please enter your name here">
-                <label>Email:</label>
-                    <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                <label>Message:</label>
-                    <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                    <input type="submit" value="SUBMIT">      
+    <!--start of contact form-->
+    <div id="Contact">
+        <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+        <div class="form-popup" id="myForm">
+            <form action="https://formspree.io/f/mpzvaawd" method="post" class="form-container">
+                <h1>Contact</h1>
+                <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Enter your name here" name="name" required>
+                <label for="phone"><b>Phone</b></label>
+                    <input type="text" placeholder="Enter your phone number here" name="phone">
+                <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter your email address here" name="email" required>
+                <label for="message"><b>Message</b></label>
+                    <input type="text" placeholder="Type your message here" name="message">
+                
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
             </form>
-        </div>
-        <div class="column_2 column_tall"><!--right column-->
-            <img src="./Images/email-me.png" alt="Email picture">
+
         </div>
     </div>
-    <!--end of contact section-->
+    <!--end of contact form-->
+   
+<!--adding JS-->
+<script src="./JS/portfolio.js"></script>
 </body>
 <!--end of body-->
-<!--start of footer-->
-<footer>
+ <!--start of footer-->
+ <footer>
     <p>
         <p class="center">Raymond Harrison 2023
-            <br><a href="www.linkedin.com/in/raymond-harrison-23767529a" target="_blank">Raymond's Linkedin</a>
+            <br><a href="www.linkedin.com/in/raymond-harrison-32033m" target="_blank">Raymond's Linkedin</a>
         </p>
     </p>
 </footer>
 <!--end of footer-->
+</html>
